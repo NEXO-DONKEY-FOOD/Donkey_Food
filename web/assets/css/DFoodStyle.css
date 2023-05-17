@@ -1,0 +1,29 @@
+.Namebox{
+    border-radius: 20px;
+    border: 2px solid #ffcc4c;
+    position: relative;
+    top: 40px; left: 300px;
+    background-color:#ffcc4c;
+    padding: 10px;
+    font-size: 20px;
+}
+.Logo{
+    position: relative;
+    top: 10px; left: 60px;
+}
+.group{
+    position: relative;
+    top: 60px; left: 300px;
+    z-index: 100;
+}
+.group1{
+    position: relative;
+    top: 150px; left: 300px;
+    z-index: 100;
+}
+.group2{
+    border: 2px solid #ffcc4c;;
+    position: relative;
+    top: 75px; left: 300px;
+    z-index: 100;
+}

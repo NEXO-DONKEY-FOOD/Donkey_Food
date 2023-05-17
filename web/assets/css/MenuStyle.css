@@ -1,0 +1,296 @@
+.learn-more {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.learn-more {
+  width: 12rem;
+  height: 0rem;
+  left: -1rem;
+}
+
+.learn-more .circle {
+  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #3a4750;
+  border-radius: 1.625rem;
+}
+
+.learn-more .circle .icon {
+  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #eeeeee;
+}
+
+.learn-more .circle .icon.arrow {
+  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #eeeeee;
+  border-right: 0.125rem solid #eeeeee;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.learn-more .button-text {
+  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #3a4750;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.learn-more:hover .circle {
+  width: 100%;
+}
+
+.learn-more:hover .circle .icon.arrow {
+  background: #eeeeee;
+  -webkit-transform: translate(1rem, 0);
+  -ms-transform: translate(1rem, 0);
+  transform: translate(1rem, 0);
+}
+
+.learn-more:hover .button-text {
+  color: #eeeeee;
+}
+.group{
+    position: relative;
+    top: 150px; left: 150px;
+    z-index: 100;
+}
+.group1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 28px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+ }
+ .TituloProducto{
+     position: absolute;
+     top: 125px;
+     left: 700px;
+     font-size: 20px;
+ }
+ .TextProducto{
+     position: absolute;
+     top: 300px;
+     left: 550px;
+     font-size: 20px;
+ }
+ .PrecioProducto{
+     position: absolute;
+     top: 200px;
+     left: 550px;
+     font-size: 20px;
+ }
+ .SelectProducto{
+     position: absolute;
+     top: 400px;
+     left: 550px;
+     font-size: 15px;
+ }
+ .SelectComp{
+     position: absolute;
+     top: 450px;
+     left: 550px;
+     font-size: 15px;
+ }
+ .AddButton{
+     border-radius: 15px;
+     border: 2px solid #1d134b;
+     position: absolute;
+     top: 500px;
+     left: 550px;
+     font-size: 20px;
+     background-color:#1d134b;
+     padding: 10px;
+     width: 500px
+ }
+ .AddButton2{
+     border-radius: 15px;
+     border: 2px solid #1d134b;
+     position: absolute;
+     top: 560px;
+     left: 550px;
+     font-size: 20px;
+     background-color:#1d134b;
+     padding: 10px;
+     width: 500px
+ }
+ .AddButton3{
+     border-radius: 15px;
+     border: 2px solid #1d134b;
+     position: absolute;
+     top: 560px;
+     left: 350px;
+     font-size: 20px;
+     background-color:#1d134b;
+     padding: 10px;
+     width: 500px
+ }
+ .AddButton1{
+     border-radius: 15px;
+     border: 2px solid #1d134b;
+     position: absolute;
+     top: 550px;
+     left: 450px;
+     font-size: 20px;
+     background-color:#1d134b;
+     padding: 10px;
+     width: 500px
+ }
+ .ImageProducto{
+     position: absolute;
+     top: 150px;
+     left: 50px;
+     border-radius: 20px;
+     border: 10px solid #ffcc4c;
+     width: 450px;
+     height: 400px;
+ }
+ .efectivo{
+     position: relative;
+     top: 150px;
+     left: 200px;
+ }
+ .paypal{
+     position: relative;
+     top: 150px;
+     left: 630px;
+ }
+ .efecText{
+     position: relative;
+     top: 200px;
+     left: 275px;
+     font-size: 40px;
+ }
+ .payText{
+     position: relative;
+     top: 140px;
+     left: 840px;
+     font-size: 40px;
+ }
+ .PaypalTitle{
+    position: relative;
+    top: 150px;
+    left: 460px;
+    font-size: 20px;
+ }
+ .MiInfo{
+    position: relative;
+    top: 100px;
+    left: 460px;
+    font-size: 30px;
+ }
+ .MiName{
+    position: relative;
+    top: 250px;
+    left: 100px;
+    font-size: 20px;
+ }
+ .MiEmail{
+    position: relative;
+    top: 250px;
+    left: 100px;
+    font-size: 20px;
+ }
+ .MiPassword{
+    position: relative;
+    top: 250px;
+    left: 100px;
+    font-size: 20px;
+ }
+ .PaypalButtons{
+     position: relative;
+     top: 200px;
+     left: 375px;
+     max-height: 500px;
+     max-width: 600px;
+ }
+ .Total{
+     position: relative;
+     top: 250px;
+     left: 700px;
+     font-size: 30px;
+ }
+ .TextSegui{
+    border-radius: 20px;
+    border: 2px solid #ffcc4c;
+    position: absolute;
+    left: 700px;
+    background-color:#ffcc4c;
+    padding: 10px;
+    font-size: 20px;
+ }
+ .TextSegui1{
+    border-radius: 20px;
+    border: 2px solid #ffcc4c;
+    position: absolute;
+    left: 175px;
+    top: 125px;
+    background-color:#ffcc4c;
+    padding: 10px;
+    font-size: 20px;
+ }
+ .TextSegui2{
+    border-radius: 20px;
+    border: 2px solid #ffcc4c;
+    position: absolute;
+    left: 175px;
+    top: 500px;
+    background-color:#ffcc4c;
+    padding: 10px;
+    font-size: 20px;
+ }
+ .UserPhoto{
+     max-height: 300px;
+     max-width: 300;
+     position: absolute;
+     top: 200px;
+     left: 850px
+ }

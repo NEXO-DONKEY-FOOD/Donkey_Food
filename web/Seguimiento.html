@@ -1,0 +1,227 @@
+<html lang="en">
+  <head>
+    <link rel="icon" href="assets/images/DonkeyFood.png">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+
+    <title>DonkeyFood</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/MenuStyle.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/style1.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+    <link rel="stylesheet" href="assets/css/Timer.css" />
+    <!---->
+
+        <style>
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: #fff4e7;
+    }
+
+    .table-hover tbody tr:hover {
+      background-color: #fbe083;
+    }
+
+    .thead-yellow {
+      background-color: #ffc000;
+      color: white;
+    }
+
+  </style>
+  </head>
+<body translate="no" >
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <nav class="main-nav">
+                <a href="javascript:history.back()">
+                <button class="learn-more" style="position: relative; top: 30px;">
+                    <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Volver</span> 
+                </button>
+                </a>
+                <ul class="nav">
+                    <div class="group1">
+                        <svg class="iconn" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+                        <input placeholder="Search" type="search" class="input">
+                    </div>
+                  <li>
+                    <a href="FormaPago.jsp"><b>PAGO</b></a>
+                  </li>
+                  <li >
+                    <a href="Bolsa.jsp"><b>BOLSA</b></a>
+                  </li>
+                  <li>
+                    <a href="Seguimiento.jsp"><b>SEGUIMIENTO</b></a>
+                  </li>
+                  <li>
+                    <a href="MenuDF.jsp"><b>MENU</b></a>
+                  </li>
+                  <li>
+                    <a href="Perfil.jsp"><b>PERFIL</b></a>
+                  </li>
+                </ul>
+                <a class="menu-trigger">
+                  <span>Menu</span>
+                </a>
+                <!-- ***** Menu End ***** -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+  <div id="app" style="position: absolute; left: 1000px; top: 150px"></div>
+  <div class="TextSegui"><b>Tu pedido estara listo en:</b></div>
+  <div class="TextSegui1"><b>Detalles de tu pedido</b></div>
+  <div class="TextSegui2"><b>Total a pagar: $137 MXN</b></div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+  
+    <script id="rendered-js" >
+        // Credit: Mateusz Rybczonec
+
+        const FULL_DASH_ARRAY = 283;
+        const WARNING_THRESHOLD = 10;
+        const ALERT_THRESHOLD = 5;
+
+        const COLOR_CODES = {
+          info: {
+            color: "green" },
+
+          warning: {
+            color: "orange",
+            threshold: WARNING_THRESHOLD },
+
+          alert: {
+            color: "red",
+            threshold: ALERT_THRESHOLD } };
+
+
+
+        const TIME_LIMIT = 300;
+        let timePassed = 0;
+        let timeLeft = TIME_LIMIT;
+        let timerInterval = null;
+        let remainingPathColor = COLOR_CODES.info.color;
+
+        document.getElementById("app").innerHTML = `
+        <div class="base-timer">
+          <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <g class="base-timer__circle">
+              <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+              <path
+                id="base-timer-path-remaining"
+                stroke-dasharray="283"
+                class="base-timer__path-remaining ${remainingPathColor}"
+                d="
+                  M 50, 50
+                  m -45, 0
+                  a 45,45 0 1,0 90,0
+                  a 45,45 0 1,0 -90,0
+                "
+              ></path>
+            </g>
+          </svg>
+          <span id="base-timer-label" class="base-timer__label">${formatTime(
+        timeLeft)
+        }</span>
+        </div>
+        `;
+
+        startTimer();
+
+        function onTimesUp() {
+          clearInterval(timerInterval);
+        }
+
+        function startTimer() {
+          timerInterval = setInterval(() => {
+            timePassed = timePassed += 1;
+            timeLeft = TIME_LIMIT - timePassed;
+            document.getElementById("base-timer-label").innerHTML = formatTime(
+            timeLeft);
+
+            setCircleDasharray();
+            setRemainingPathColor(timeLeft);
+
+            if (timeLeft === 0) {
+              onTimesUp();
+            }
+          }, 1000);
+        }
+
+        function formatTime(time) {
+          const minutes = Math.floor(time / 60);
+          let seconds = time % 60;
+
+          if (seconds < 10) {
+            seconds = `0${seconds}`;
+          }
+
+          return `${minutes}:${seconds}`;
+        }
+
+        function setRemainingPathColor(timeLeft) {
+          const { alert, warning, info } = COLOR_CODES;
+          if (timeLeft <= alert.threshold) {
+            document.
+            getElementById("base-timer-path-remaining").
+            classList.remove(warning.color);
+            document.
+            getElementById("base-timer-path-remaining").
+            classList.add(alert.color);
+          } else if (timeLeft <= warning.threshold) {
+            document.
+            getElementById("base-timer-path-remaining").
+            classList.remove(info.color);
+            document.
+            getElementById("base-timer-path-remaining").
+            classList.add(warning.color);
+          }
+        }
+
+        function calculateTimeFraction() {
+          const rawTimeFraction = timeLeft / TIME_LIMIT;
+          return rawTimeFraction - 1 / TIME_LIMIT * (1 - rawTimeFraction);
+        }
+
+        function setCircleDasharray() {
+          const circleDasharray = `${(
+          calculateTimeFraction() * FULL_DASH_ARRAY).
+          toFixed(0)} 283`;
+          document.
+          getElementById("base-timer-path-remaining").
+          setAttribute("stroke-dasharray", circleDasharray);
+        }
+        //# sourceURL=pen.js
+    </script>
+
+
+
+    <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-550eae0ce567d3d9182e33cee4e187761056020161aa87e3ef74dc467972c555.js"></script>
+</body>
+</html>
