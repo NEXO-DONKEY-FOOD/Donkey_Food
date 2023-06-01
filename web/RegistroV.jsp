@@ -10,7 +10,7 @@
 
     try {
         Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=n0m3l0");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=1234");
 
         String nombre = request.getParameter("nombre");
         String correo = request.getParameter("correo");

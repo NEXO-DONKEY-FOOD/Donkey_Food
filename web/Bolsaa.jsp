@@ -4,7 +4,7 @@
     String correo = (String) session.getAttribute("correo");
     
     // Conectarse a la base de datos
-    String url = "jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=n0m3l0";
+    String url = "jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=1234";
     Connection conn = DriverManager.getConnection(url);
     
     // Crear la consulta SQL

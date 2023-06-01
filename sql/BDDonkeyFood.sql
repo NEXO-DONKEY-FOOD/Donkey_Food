@@ -68,14 +68,3 @@ nota varchar (300),
 estado varchar (300)
 );
 select  * from ped;
-
-
-
-
-
-
-
-
-
-
-

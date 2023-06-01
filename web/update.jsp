@@ -5,7 +5,7 @@
 	String estado = request.getParameter("estado");
 
 	//realizamos la actualización en la base de datos
-	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=n0m3l0");
+	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=1234");
 	PreparedStatement stmt = conn.prepareStatement("UPDATE ped SET estado = ? WHERE correo = ?");
 	stmt.setString(1, estado);
 	stmt.setString(2, correo);

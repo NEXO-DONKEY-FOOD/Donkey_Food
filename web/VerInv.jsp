@@ -125,7 +125,7 @@
         
         <tbody>
             <% 
-                String url = "jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=n0m3l0";
+                String url = "jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=1234";
                 Connection connection = null;
                 Statement statement = null;
                 ResultSet resultSet = null;

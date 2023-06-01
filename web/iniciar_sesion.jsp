@@ -71,7 +71,7 @@ form button:hover {
     // Verificar si los datos de inicio de sesión son válidos
     if (correo != null && contrasena != null) {
         // Conectar a la base de datos
-        String url = "jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=n0m3l0";
+        String url = "jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=1234";
         Connection conn = DriverManager.getConnection(url);
 
         // Consultar la base de datos

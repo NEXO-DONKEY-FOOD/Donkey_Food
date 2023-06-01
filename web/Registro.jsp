@@ -23,7 +23,7 @@
             String NombreProducto = request.getParameter("Nombre");
           
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=n0m3l0");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=1234");
             stmt = con.createStatement();
             
             rs = stmt.executeQuery("select * from Productos where NombreProducto like '%" + NombreProducto + "%'"); //Pon select * from "nombre de la tabla y quitar lo otro"

@@ -90,7 +90,7 @@
                 int idProducto = Integer.parseInt(request.getParameter("id_p"));
                 
                 // Definir la cadena de conexión a la base de datos
-                String url = "jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=n0m3l0";
+                String url = "jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=1234";
 
                 // Establecer la conexión
                 Connection conn = DriverManager.getConnection(url);

@@ -119,7 +119,7 @@ header {
 
             try {
                 // Establecer conexión a la base de datos
-                String url = "jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=n0m3l0";
+                String url = "jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=1234";
                 connection = DriverManager.getConnection(url);
 
                 // Eliminar producto de la base de datos

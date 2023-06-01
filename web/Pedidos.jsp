@@ -95,7 +95,7 @@
         <h1>Bienvenido(a) <%= session.getAttribute("correo") %></h1>
 	<%
 		//obtenemos la conexión a la base de datos
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=n0m3l0");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=1234");
 
 		//obtenemos los registros de la tabla "ped"
 		Statement stmt = conn.createStatement();

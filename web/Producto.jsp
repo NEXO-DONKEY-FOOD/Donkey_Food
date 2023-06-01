@@ -16,7 +16,7 @@
    // Realizar la consulta en la base de datos para obtener los detalles del producto
   
       Class.forName("com.mysql.jdbc.Driver").newInstance();
-      con = DriverManager.getConnection("jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=n0m3l0");
+      con = DriverManager.getConnection("jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=1234");
       stmt = con.createStatement();
       String query = "SELECT * FROM Productos WHERE IdProducto = " + productId;
       rs = stmt.executeQuery(query);

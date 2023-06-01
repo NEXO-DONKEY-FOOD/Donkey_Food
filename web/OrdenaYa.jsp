@@ -114,7 +114,7 @@ header {
 			String estado = "Pedido";
 
 			// Conectar a la base de datos
-			String url = "jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=n0m3l0";
+			String url = "jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=1234";
 			Connection conexion = DriverManager.getConnection(url);
 
 			// Insertar los datos en la tabla "ped"

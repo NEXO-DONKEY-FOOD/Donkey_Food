@@ -7,7 +7,7 @@
     
     try {
         Class.forName("com.mysql.jdbc.Driver").newInstance();
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=n0m3l0");
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/DonkeyFoodDB?user=root&password=1234");
         
         int idProducto = Integer.parseInt(request.getParameter("id"));
         String nombreProducto = request.getParameter("nombre");
