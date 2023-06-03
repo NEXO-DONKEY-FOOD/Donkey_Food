@@ -1,70 +1,70 @@
-Drop database if exists DonkeyFoodDB;
-CREATE database DonkeyFoodDB;
-use DonkeyFoodDB;
+DROP DATABASE IF EXISTS DONKEYFOODDB;
+CREATE DATABASE DONKEYFOODDB;
+USE DONKEYFOODDB;
 
-#Tabla para usuarios
-Create table Usuarios(
-Correo varchar (300),
-Nombre varchar (300),
-Contrasena varchar (300)
+#TABLA PARA USUARIOS
+CREATE TABLE USUARIOS(
+CORREO VARCHAR (300),
+NOMBRE VARCHAR (300),
+CONTRASENA VARCHAR (300)
 );
-insert into Usuarios values("Pedro@gmail","Juan","A1");
-insert into Usuarios values("a@gmail","a1","A1");
+INSERT INTO USUARIOS VALUES("PEDRO@GMAIL","JUAN","A1");
+INSERT INTO USUARIOS VALUES("A@GMAIL","A1","A1");
 
-Select * From Usuarios;
+SELECT * FROM USUARIOS;
 
-#Tabla para vendedores
-Create table Vendedores(
-CorreoV varchar (300),
-NombreV varchar (300),
-ContrasenaV varchar (300)
-);
-
-insert into Vendedores values ("1","Juan perez","1Juan");
-insert into Usuarios values("a@gmail","a1","A1");
-insert into Vendedores values("a","a","a");
-select * from Vendedores;
-
-#Tabla de productos en venta
-Create table Productos(
-IdProducto int primary key,
-CantidadProducto int,
-NombreProducto varchar (300),
-PrecioProducto varchar (30),
-DescripcionProducto varchar (300),
-ImagenProducto varchar (9999),        #Cambiar una vez se tenga el codigo para subir archivos tipo png a la base de datos
-DetallesProducto varchar (300)       #Para guardar los detalles de los productos se ocupara un array dentro de los jsp para que los pueda leer separados por una ","
+#TABLA PARA VENDEDORES
+CREATE TABLE VENDEDORES(
+CORREOV VARCHAR (300),
+NOMBREV VARCHAR (300),
+CONTRASENAV VARCHAR (300)
 );
 
-insert into Productos values ("1","2","Coca","300","COCACOLA DE 1 LITRO","https://thefoodtech.com/wp-content/uploads/2020/05/coca-cola.jpg","Es coca");
-insert into Productos values ("2","3","Torta de jamon","100","Torta de jamon","https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Torta_Cubana.jpg/1200px-Torta_Cubana.jpg","Torta con jamon");
-insert into Productos values ("3","3","Dulce","25","10 dulces","https://s.cornershopapp.com/product-images/1500044.jpg?versionId=JFF.DrhbeWhVfbySDICNiyZyOed0K4JL","10 dulces aciduladitos");
-insert into Productos values ("4","3","Pepsi","250","Pepsi en lata","https://cdn.shopify.com/s/files/1/0566/4391/1854/products/7501031311309_352c0ce2-9ab3-4721-b68c-f8f5bfa493d0.png?v=1626649481","200ml");
-insert into Productos values ("5","3","Hamburguesa","20","Hamburguesa de carne","https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/NCI_Visuals_Food_Hamburger.jpg/640px-NCI_Visuals_Food_Hamburger.jpg","Lleva carne");
-select * from Productos;
+INSERT INTO VENDEDORES VALUES ("1","JUAN PEREZ","1JUAN");
+INSERT INTO USUARIOS VALUES("A@GMAIL","A1","A1");
+INSERT INTO VENDEDORES VALUES("A","A","A");
+SELECT * FROM VENDEDORES;
 
-Create table Pedidos(
-IdUsuario int,
-IdVendedor int,
-DetallesPedido varchar (300),   #Aca se enviara el arreglo de los detalles del pedido en caso de que el producto tenga detalles como condimentos
-FormaPago varchar (300),
-FechaPedido varchar (300),
-FechaFinPedido varchar (300)
-);
-Insert into Pedidos values (1,"1","Detalle,XD","Efectivo","1/2/23","2/3/23");
-select * from Pedidos;
-
-create table bolsa(
-Correo varchar (300),
-Objetos varchar (1000), #aqui se gurdara el array de los objetos para que le llegue el mensaje a la cafeteria de los productos que se quieren 
-Detalles varchar (1000) #Aca se va a guardar el array de cada uno de los detalles de cada pedido
+#TABLA DE PRODUCTOS EN VENTA
+CREATE TABLE PRODUCTOS(
+IDPRODUCTO INT PRIMARY KEY,
+CANTIDADPRODUCTO INT,
+NOMBREPRODUCTO VARCHAR (300),
+PRECIOPRODUCTO VARCHAR (30),
+DESCRIPCIONPRODUCTO VARCHAR (300),
+IMAGENPRODUCTO VARCHAR (9999),        #CAMBIAR UNA VEZ SE TENGA EL CODIGO PARA SUBIR ARCHIVOS TIPO PNG A LA BASE DE DATOS
+DETALLESPRODUCTO VARCHAR (300)       #PARA GUARDAR LOS DETALLES DE LOS PRODUCTOS SE OCUPARA UN ARRAY DENTRO DE LOS JSP PARA QUE LOS PUEDA LEER SEPARADOS POR UNA ","
 );
 
-create table ped(
+INSERT INTO PRODUCTOS VALUES ("1","2","COCA","20","COCACOLA DE 1 LITRO","HTTPS://THEFOODTECH.COM/WP-CONTENT/UPLOADS/2020/05/COCA-COLA.JPG","ES COCA");
+INSERT INTO PRODUCTOS VALUES ("2","3","TORTA DE JAMON","50","TORTA DE JAMON","HTTPS://UPLOAD.WIKIMEDIA.ORG/WIKIPEDIA/COMMONS/THUMB/B/BB/TORTA_CUBANA.JPG/1200PX-TORTA_CUBANA.JPG","TORTA CON JAMON");
+INSERT INTO PRODUCTOS VALUES ("3","3","DULCE","25","10 DULCES","HTTPS://S.CORNERSHOPAPP.COM/PRODUCT-IMAGES/1500044.JPG?VERSIONID=JFF.DRHBEWHVFBYSDICNIYZYOED0K4JL","10 DULCES ACIDULADITOS");
+INSERT INTO PRODUCTOS VALUES ("4","3","PEPSI","20","PEPSI EN LATA","HTTPS://CDN.SHOPIFY.COM/S/FILES/1/0566/4391/1854/PRODUCTS/7501031311309_352C0CE2-9AB3-4721-B68C-F8F5BFA493D0.PNG?V=1626649481","200ML");
+INSERT INTO PRODUCTOS VALUES ("5","3","HAMBURGUESA","60","HAMBURGUESA DE CARNE","HTTPS://UPLOAD.WIKIMEDIA.ORG/WIKIPEDIA/COMMONS/THUMB/6/62/NCI_VISUALS_FOOD_HAMBURGER.JPG/640PX-NCI_VISUALS_FOOD_HAMBURGER.JPG","LLEVA CARNE");
+SELECT * FROM PRODUCTOS;
 
-correo varchar (300),
-productos varchar (300),
-nota varchar (300),
-estado varchar (300)
+CREATE TABLE PEDIDOS(
+IDUSUARIO INT,
+IDVENDEDOR INT,
+DETALLESPEDIDO VARCHAR (300),   #ACA SE ENVIARA EL ARREGLO DE LOS DETALLES DEL PEDIDO EN CASO DE QUE EL PRODUCTO TENGA DETALLES COMO CONDIMENTOS
+FORMAPAGO VARCHAR (300),
+FECHAPEDIDO VARCHAR (300),
+FECHAFINPEDIDO VARCHAR (300)
 );
-select  * from ped;
+INSERT INTO PEDIDOS VALUES (1,"1","DETALLE,XD","EFECTIVO","1/2/23","2/3/23");
+SELECT * FROM PEDIDOS;
+
+CREATE TABLE BOLSA(
+CORREO VARCHAR (300),
+OBJETOS VARCHAR (1000), #AQUI SE GURDARA EL ARRAY DE LOS OBJETOS PARA QUE LE LLEGUE EL MENSAJE A LA CAFETERIA DE LOS PRODUCTOS QUE SE QUIEREN 
+DETALLES VARCHAR (1000) #ACA SE VA A GUARDAR EL ARRAY DE CADA UNO DE LOS DETALLES DE CADA PEDIDO
+);
+
+CREATE TABLE PED(
+
+CORREO VARCHAR (300),
+PRODUCTOS VARCHAR (300),
+NOTA VARCHAR (300),
+ESTADO VARCHAR (300)
+);
+SELECT  * FROM PED;

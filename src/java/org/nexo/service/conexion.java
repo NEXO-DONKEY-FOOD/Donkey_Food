@@ -8,7 +8,7 @@ public class conexion {
     private final String baseDatos = "DonkeyFoodDB";
     private final String servidor = "com.mysql.cj.jdbc.Driver" + baseDatos;
     private final String usuario = "root";
-    private final String clave = "n0m3l0";
+    private final String clave = "1234";
     
     public Connection conectar(){
         Connection cn = null;

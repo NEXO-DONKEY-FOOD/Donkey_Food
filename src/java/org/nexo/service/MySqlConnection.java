@@ -16,7 +16,7 @@ import java.util.List;
 public class MySqlConnection implements Serializable
 {
     public static String user = "root";
-    public static String password = "n0m3l0";
+    public static String password = "1234";
     public static String db = "donkeyfooddb";
     public static boolean testDriver( )
     {
